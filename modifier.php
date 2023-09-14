@@ -13,7 +13,8 @@
     <div class="container">
 <?php include'navbar.php'; ?> 
 
-<div class="mt-4">   
+<div class="mt-4"> 
+      
 <div class="row">
         <div class="col-md-8 offset-md-3">
 
@@ -79,17 +80,25 @@
             ?>
         </p> -->
         <form action="" method="POST">
-            <label>Nom</label>
-            <input type="text" name="nom" value="<?= $document['nom'] ?>">
-            <label>Prénom</label>
-            <input type="text" name="prenom" value="<?= $document['prenom'] ?>">
-            <label>Âge</label>
-            <input type="number" name="age" value="<?= $document['age'] ?>">
-            <input type="submit" value="Modifier" name="button">
+            <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text"  class="form-control" name="nom" value="<?= $document['nom'] ?>">
+            </div>
+            <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text"  class="form-control" name="prenom" value="<?= $document['prenom'] ?>">
+            </div>
+            <div class="mb-3">
+            <label for="age" class="form-label">Âge</label>
+            <input type="number"  class="form-control" name="age" value="<?= $document['age'] ?>">
+            </div>
+            <button type="submit" value="Modifier" name="button" class="btn btn-primary">Modifier</button>
+
+            </div>
         </form>
     </div>
 </div>
-        </div>
+</div>
 </div>
 </div>
 </body>

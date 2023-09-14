@@ -6,20 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestion Employés</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
     <?php include'navbar.php'; ?>
-    
-    
+    <br> <br>
+    <hr>
     <div class="mt-4">
-
         <div class="row">
         <div class="col-s12">
         <div class="row">
         <a href="rechercher.php" class="Btn_add mb-3"> <img src="images/rechercher.png"> Rechercher</a>
         <a href="ajouter.php" class="Btn_add mb-4 col-md-3 offset-md-8"> <img src="images/plus.png"> Ajouter</a>
+        <hr>
+        <br>
+        <br>
+        
         </div>
         <?php
         
@@ -27,17 +30,18 @@
             echo '<div class="alert alert-danger">' . $message. '</div>';
             }
          ?>
-          <div class="table-responsive">
-  
-        
-        <table class="table">
-            <tr id="items">
+        <div class="table-responsive">        
+          <table class="table">
+          <thead>
+            <tr id="">
+                <th>id</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Age</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
+          </thead>
             <tbody class="employee-table">
             <?php
             // Inclure la page de connexion
@@ -53,11 +57,13 @@
                 // S'il n'existe pas d'employé dans la base de données, affichez ce message :
                 echo "Il n'y a pas encore d'employé ajouté !";
             } else {
+                $ide=1;
                 // Sinon, affichez la liste de tous les employés
                 foreach ($documents as $document) {
                     ?>
                     <tr>
-                        <td><?= $document['nom'] ?></td>
+                        <td><?=$ide?></td>
+                        <td><?=$document['nom'] ?></td>
                         <td><?= $document['prenom'] ?></td>
                         <td><?= $document['age'] ?></td>
                         <!-- Nous alons mettre l'id de chaque employé dans ce lien -->
@@ -65,6 +71,7 @@
                         <td><a href="supprimer.php?id=<?= $document['_id'] ?>"onclick="return confirm('Voulez-vous vraiment supprimer cet employé ?')"><img src="images/trash.png"></a></td>
                     </tr>
                     <?php
+                    $ide+=1;
                 }
             }
             ?>

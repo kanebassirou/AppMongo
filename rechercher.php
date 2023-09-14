@@ -52,7 +52,7 @@
         <br>
 
         <?php if (!empty($resultats)): ?>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>

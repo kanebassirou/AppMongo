@@ -35,6 +35,8 @@
             
             if ($insertResult->getInsertedCount() > 0) {
                 //si l'insertion a été effectuée avec succès , on fait une redirection
+                $message = "Employé est ajouté avec succe";
+
                 header("location: index.php");
                 exit();
             } else {
@@ -60,19 +62,25 @@
             ?>
         </p>
         <form action="" method="POST">
-            <label>Nom</label>
-            <input type="text" name="nom" required>
-            <label>Prénom</label>
-            <input type="text" name="prenom" required>
-            <label>Âge</label>
-            <input type="number" name="age" required>
-            <input type="submit" value="Ajouter" name="button">
+            <div class="mb-3">
+                <label for="nom" class="form-label">Nom</label>
+                <input type="text" class="form-control" name="nom" required>
+            </div>
+            <div class="mb-3">
+               <label for="nom" class="form-label">Prénom</label>
+               <input type="text" class="form-control"name="prenom" required>
+            </div>
+            <div class="mb-3">
+               <label for="nom" class="form-label">Âge</label>
+               <input type="number" class="form-control" name="age" required>
+            </div>
+            <button type="submit" name="button" class="btn btn-success">Ajouter</button>
         </form>
       </div>
-    </div>
-    </div>
-    </div>
-    </div>
+     </div>
+   </div>
+ </div>
+</div>
  
 </body>
 </html>

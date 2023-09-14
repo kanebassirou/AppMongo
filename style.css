@@ -23,12 +23,12 @@ body {
     min-height: 100vh;
     position: relative;
 }
-.container {
+/* .container {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
     padding: 20px;
-}
+} */
 .Btn_add {
     width: fit-content;
     margin-bottom:20px;
@@ -60,7 +60,7 @@ td {
     font-weight: 400;
     padding: 5px 30px;
     font-size: 14px;
-    text-align: center;
+    /* text-align: center; */
 
 }
 img {
@@ -80,12 +80,12 @@ tr:nth-child(2n) td {
     padding: 25px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 6px;
-    width: 500px;
+    width: 100%;
 
 }
 .form form {
     display: flex;
-    width: 350px;
+    width:80% ;
     flex-direction: column;
 }
 .back_btn {
