@@ -16,10 +16,10 @@
     <div class="mt-4">
 
         <div class="row">
-        <div class="col-md-8 offset-md-3">
-        <div class="row mt-3">
-        <a href="rechercher.php" class="Btn_add mb-4"> <img src="images/rechercher.png"> Rechercher</a>
-        <a href="ajouter.php" class="Btn_add mb-4 col-md-3 offset-md-4"> <img src="images/plus.png"> Ajouter</a>
+        <div class="col-s12">
+        <div class="row">
+        <a href="rechercher.php" class="Btn_add mb-3"> <img src="images/rechercher.png"> Rechercher</a>
+        <a href="ajouter.php" class="Btn_add mb-4 col-md-3 offset-md-8"> <img src="images/plus.png"> Ajouter</a>
         </div>
         <?php
         
@@ -27,9 +27,10 @@
             echo '<div class="alert alert-danger">' . $message. '</div>';
             }
          ?>
+          <div class="table-responsive">
   
         
-        <table>
+        <table class="table">
             <tr id="items">
                 <th>Nom</th>
                 <th>Prénom</th>
@@ -68,7 +69,8 @@
             }
             ?>
             </tbody>
-        </table>   
+        </table>
+          </div>   
     </div>
     <div class="d-flex justify-content-center mt-4">
     <nav aria-label="Page navigation">
