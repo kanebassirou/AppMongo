@@ -21,6 +21,13 @@
         <a href="rechercher.php" class="Btn_add mb-4"> <img src="images/rechercher.png"> Rechercher</a>
         <a href="ajouter.php" class="Btn_add mb-4 col-md-3 offset-md-4"> <img src="images/plus.png"> Ajouter</a>
         </div>
+        <?php
+        
+          if (isset($message)) {
+            echo '<div class="alert alert-danger">' . $message. '</div>';
+            }
+         ?>
+  
         
         <table>
             <tr id="items">
@@ -30,6 +37,7 @@
                 <th>Modifier</th>
                 <th>Supprimer</th>
             </tr>
+            <tbody class="employee-table">
             <?php
             // Inclure la page de connexion
             include_once "connexion.php";
@@ -59,9 +67,25 @@
                 }
             }
             ?>
+            </tbody>
         </table>   
     </div>
+    <div class="d-flex justify-content-center mt-4">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li class="page-item" id="prevPage"><a class="page-link" href="#">Précédent</a></li>
+            <!-- Vous pouvez ajouter plus de liens de page ici si nécessaire -->
+            <li class="page-item" id="nextPage"><a class="page-link" href="#">Suivant</a></li>
+        </ul>
+    </nav>
 </div>
-    
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="veri.js"></script>
+   
 </body>
 </html>

@@ -40,7 +40,10 @@
             );
 
             if ($updateResult->getModifiedCount() > 0) {
+                $messageSucce ="vous modifier les information de l'employe avec succe";
+
                 //si la requête a été effectuée avec succès , on fait une redirection
+                $message = "Employé est modifié";
                 header("location: index.php");
                 exit();
             } else {
@@ -53,19 +56,28 @@
         }
     }
     ?>
+
         <div class="mt-4">
+
+       
 
 
     <div class="form">
         <a href="index.php" class="back_btn"><img src="images/back.png"> Retour</a>
         <h2>Modifier l'employé : <?= $document['nom'] ?></h2>
-        <p class="erreur_message">
+        <?php
+        
+          if (isset($message)) {
+            echo '<div class="alert alert-danger">' . $message. '</div>';
+            }
+         ?>
+        <!-- <p class="erreur_message">
             <?php
             if (isset($message)) {
                 echo $message;
             }
             ?>
-        </p>
+        </p> -->
         <form action="" method="POST">
             <label>Nom</label>
             <input type="text" name="nom" value="<?= $document['nom'] ?>">
