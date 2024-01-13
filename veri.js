@@ -29,7 +29,13 @@ $(document).ready(function() {
         }
     });
 
+    setTimeout(function() {
+        $('#success-message').fadeOut('slow');
+    }, 5000); // 5000ms = 5s
+
     // Autres actions de pagination
     // ...
 
 });
+
+

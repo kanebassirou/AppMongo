@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,10 +29,16 @@
         </div>
         <?php
         
-          if (isset($message)) {
-            echo '<div class="alert alert-danger">' . $message. '</div>';
-            }
-         ?>
+        //   if (isset($message)) {
+        //     echo '<div class="alert alert-danger">' . $message. '</div>';
+        //     }
+        // if (isset($_SESSION['sucess'])) {
+        //     echo '<div class="alert alert-success">' . $_SESSION['sucess']. '</div>';
+        //     unset($_SESSION['message']);
+        //     }
+        //  ?>
+        <div id="temporary-message-container"></div>
+        <!-- <div class="alert alert-success" id="success-message" style="display: none;"></div> -->
         <div class="table-responsive">        
           <table class="table">
           <thead>
@@ -92,9 +101,8 @@
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
 <script src="veri.js"></script>
+<script src="message.js" ></script>
    
 </body>
 </html>

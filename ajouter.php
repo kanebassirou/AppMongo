@@ -11,12 +11,18 @@
 <body>
 
     <div class="container">
-        <?php include'navbar.php'; ?>
+        <?php
+
+use Random\Engine\Secure;
+
+ include'navbar.php'; ?>
 
     <div class="mt-4">
     <div class="row">
         <div class="col-md-8 offset-md-3">
     <?php
+    session_start();
+
     //vérifier que le bouton ajouter a bien été cliqué
     if (isset($_POST['button'])) {
         //extraction des informations envoyées dans des variables par la méthode POST
@@ -35,7 +41,9 @@
             
             if ($insertResult->getInsertedCount() > 0) {
                 //si l'insertion a été effectuée avec succès , on fait une redirection
-                $message = "Employé est ajouté avec succe";
+                // $message = "Employé est ajouté avec succe";
+                $_SESSION['success'] = "l'employe est ajouter avec success";
+
 
                 header("location: index.php");
                 exit();
