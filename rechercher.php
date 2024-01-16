@@ -54,12 +54,14 @@
         <?php if (!empty($resultats)): ?>
             <table class="table">
                 <tr>
+                 <th>Identifiant Employe</th>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Âge</th>
                 </tr>
                 <?php foreach ($resultats as $document): ?>
                     <tr>
+                    <td><?= $document['_id'] ?></td>
                         <td><?= $document['nom'] ?></td>
                         <td><?= $document['prenom'] ?></td>
                         <td><?= $document['age'] ?></td>

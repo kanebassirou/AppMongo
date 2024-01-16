@@ -2,7 +2,7 @@
 $(document).ready(function() {
     var table = $('.employee-table');
     var rows = table.find('tr').slice(1); // Exclut la première ligne d'en-tête
-    var pageSize = 4; // Nombre de colonnes par page
+    var pageSize = 10; // Nombre de colonnes par page
     var currentPage = 1;
 
     function showPage(page) {
@@ -22,19 +22,19 @@ $(document).ready(function() {
     });
 
     $('#nextPage').click(function() {
-        var totalPages = Math.ceil(rows.length / pageSize);
+        var totalPages = Math.ceil((rows.length - 1) / pageSize); // Exclut le premier élément
         if (currentPage < totalPages) {
             currentPage++;
             showPage(currentPage);
         }
     });
 
-    setTimeout(function() {
-        $('#success-message').fadeOut('slow');
-    }, 5000); // 5000ms = 5s
+    // setTimeout(function() {
+    //     $('#success-message').fadeOut('slow');
+    // }, 5000); // 5000ms = 5s
 
-    // Autres actions de pagination
-    // ...
+    // // Autres actions de pagination
+    // // ...
 
 });
 

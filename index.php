@@ -29,21 +29,21 @@ session_start();
         </div>
         <?php
         
-        //   if (isset($message)) {
-        //     echo '<div class="alert alert-danger">' . $message. '</div>';
-        //     }
-        // if (isset($_SESSION['sucess'])) {
-        //     echo '<div class="alert alert-success">' . $_SESSION['sucess']. '</div>';
-        //     unset($_SESSION['message']);
-        //     }
-        //  ?>
-        <div id="temporary-message-container"></div>
+          if (isset($message)) {
+            echo '<div class="alert alert-danger">' . $message. '</div>';
+            }
+        if (isset($_SESSION['success'])) {
+            echo '<div class="alert alert-success">' . $_SESSION['success']. '</div>';
+            unset($_SESSION['success']);
+            }
+         ?>
+        <!-- <div id="temporary-message-container"></div> -->
         <!-- <div class="alert alert-success" id="success-message" style="display: none;"></div> -->
         <div class="table-responsive">        
           <table class="table">
           <thead>
             <tr id="">
-                <th>id</th>
+                <th>Identifiant employe</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Age</th>
@@ -57,7 +57,7 @@ session_start();
             include_once "connexion.php";
             
             // Requête pour afficher la liste des employés
-            $cursor = $collection->find();
+            $cursor = $collection->find([], ['sort' => ['_id' => -1]]);
             
             // Convertir le curseur en tableau pour compter les documents
             $documents = iterator_to_array($cursor);
@@ -71,7 +71,7 @@ session_start();
                 foreach ($documents as $document) {
                     ?>
                     <tr>
-                        <td><?=$ide?></td>
+                        <td><?=$document['_id']?></td>
                         <td><?=$document['nom'] ?></td>
                         <td><?= $document['prenom'] ?></td>
                         <td><?= $document['age'] ?></td>

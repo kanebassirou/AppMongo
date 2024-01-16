@@ -1,7 +1,15 @@
+
+<div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill">
+<div class="position-relative py-2 px-4 text-bg-secondary border border-secondary rounded-pill" style="text-align: center;">
+  <h3>Gestion des Employes</h3>
+</div></div>
+<br>
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container d-flex justify-content-center align-items-center">
         <a class="navbar-brand" href="#">
-            <img src="https://img.freepik.com/free-vector/cloud-computing-concept_1284-4091.jpg?size=626&ext=jpg&uid=R98886104&ga=GA1.1.519607386.1681007324&semt=ais" alt="logo" width="100px"> <!-- Ajustez la taille du logo ici -->
+            <img src="./images/logo.jpg" alt="logo" width="100px" > <!-- Ajustez la taille du logo ici -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -21,4 +29,6 @@
             </ul>
         </div>
     </div>
+
+    <img src="./images/logo.jpg" alt="logo" width="100px" > 
 </nav>
